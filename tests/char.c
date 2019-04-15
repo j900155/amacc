@@ -3,20 +3,21 @@
 
 int mcmp(char *a, char *b, int n)
 {
-	int ret;
-	while (n--) {
-		ret = *a++ - *b++;
-		if (ret)
-			return ret;
-	}
-	return 0;
+    int ret;
+    while (n--) {
+        ret = *a++ - *b++;
+        if (ret)
+            return ret;
+    }
+    return 0;
 }
 
-int mcpy(char *a, char *b, int n)
+void mcpy(char *a, char *b, int n)
 {
-	char *dst;
-	dst = a;
-	while (n--) *a++ = *b++;
+    char *dst;
+    dst = a;
+    while (n--)
+        *a++ = *b++;
 }
 
 int main()
@@ -32,5 +33,6 @@ int main()
     p[0] = -1;
     v = p[0];
     printf("%x %d %d %x\n", p[0], p[0], v, p[1]);
+
     return 0;
 }
